@@ -248,6 +248,35 @@ details.ai-reading summary:hover { color: var(--fg); }
 }
 .hero .lede-en { font-size: 1rem; color: var(--fg); margin: 0 0 .3em; }
 .hero .lede { font-size: 1.02rem; color: var(--muted); margin: 0; }
+/* 首屏新文案：中文长标题收紧字距；英文副文小字；CTA 按钮沿用站点 quiet 风格 */
+.hero h1 { font-size: 1.6rem; letter-spacing: .02em; }
+.hero-caption p { max-width: 44rem; }
+.en-sub { font-size: .85rem; color: var(--muted); }
+.en-sub p { margin: .6em 0; }
+.cta-button {
+  display: inline-block; margin-top: 1rem; padding: .7rem 1.4rem;
+  border: 1px solid var(--border); border-radius: 6px;
+  background: var(--note-bg); color: var(--fg);
+  font-weight: 600; text-decoration: none;
+}
+.cta-button:hover { border-color: var(--fg); }
+/* 一次完整的折射：案例演示（quiet 卡片，不做科技风装饰） */
+.case-study {
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--note-bg); padding: 1.4rem; margin: 0 0 2.5rem;
+}
+.case-study h2 { margin-top: 0; }
+.case-question { border-left: 3px solid var(--border); padding-left: 1rem; margin: 1.2rem 0; }
+.case-refraction .dimension { margin: 1rem 0; }
+.case-refraction .dimension h4 { margin: 0 0 .3em; }
+.case-integration { margin-top: 1.2rem; }
+@media (min-width: 44rem) {
+  .case-refraction { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5rem; }
+  .case-refraction > h3 { grid-column: 1 / -1; }
+}
+/* 我的立场：信任底座，footer 之前 */
+.about-stance { margin: 3rem 0 0; padding: 1.6rem 0 0; border-top: 1px solid var(--border); }
+.about-stance h2 { margin-top: 0; }
 /* 一句邀请：独立成段，留白 */
 .invitation {
   text-align: center;
