@@ -543,3 +543,42 @@ details.ai-reading summary:hover { color: var(--fg); }
 @media (prefers-reduced-motion: reduce) {
   .gm-motion { display: none; }
 }
+
+/* ========== 字体系统 v1（2026-10-05）：衬线标题 × 无衬线正文 ========== */
+:root {
+  --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+}
+/* 全站标题改用衬线：Display / H2 两级 */
+h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: .02em; }
+h1 { font-size: 2rem; line-height: 1.55; }
+h2 { font-size: 1.45rem; line-height: 1.6; }
+/* 首页 hero 大标题 */
+.hero h1 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2rem, 5.2vw, 2.9rem);
+  line-height: 1.55; letter-spacing: .03em;
+}
+/* ---------- 概念索引折叠卡片 ---------- */
+details.fold { border: 1px solid var(--border); border-radius: 10px; margin: .7rem 0; }
+details.fold summary {
+  cursor: pointer; padding: .8rem 1rem; list-style: none;
+  display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap;
+}
+details.fold summary::-webkit-details-marker { display: none; }
+details.fold summary::marker { content: ""; }
+details.fold summary .fold-name { font-family: var(--serif); font-weight: 600; font-size: 1.08rem; letter-spacing: .02em; }
+details.fold summary .fold-en { font-size: .82rem; color: var(--muted); }
+details.fold summary::after { content: "＋"; margin-left: auto; color: var(--muted); font-size: 1.05rem; line-height: 1; }
+details.fold[open] summary::after { content: "－"; }
+details.fold .fold-body { padding: .2rem 1rem .95rem; }
+details.fold .fold-body p { margin: .55em 0; }
+/* ---------- Maggie 式两栏页脚 ---------- */
+.foot-cta { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; letter-spacing: .03em; margin: 0 0 .15rem; color: var(--fg); }
+.foot-cta a { color: var(--fg); }
+.foot-tagline { margin: 0 0 1.4rem; font-size: .9rem; }
+.foot-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.4rem; }
+.foot-col h4 { font-size: .72rem; letter-spacing: .22em; color: var(--muted); margin: 0 0 .55rem; font-weight: 600; }
+.foot-col a { display: block; color: var(--fg); line-height: 2.3; font-size: .95rem; }
+.foot-col a:hover { color: var(--accent); }
+.foot-col a .en { font-size: .76rem; color: var(--muted); margin-left: .45em; letter-spacing: .04em; }
+.foot-base { border-top: 1px solid var(--border); padding-top: .9rem; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; justify-content: space-between; }
