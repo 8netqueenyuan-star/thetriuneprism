@@ -582,3 +582,9 @@ details.fold .fold-body p { margin: .55em 0; }
 .foot-col a:hover { color: var(--accent); }
 .foot-col a .en { font-size: .76rem; color: var(--muted); margin-left: .45em; letter-spacing: .04em; }
 .foot-base { border-top: 1px solid var(--border); padding-top: .9rem; display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; justify-content: space-between; }
+
+/* ========== 更宽的画布（2026-10-05）：Maggie 式留白，正文保持舒适行宽 ========== */
+body { max-width: 62rem; }
+/* 长文段落保持 46rem 行宽；居中展示型段落除外 */
+main > p { max-width: 46rem; }
+main > p.invitation { max-width: none; }
