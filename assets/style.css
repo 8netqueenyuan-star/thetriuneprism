@@ -585,3 +585,28 @@ body { max-width: 72rem; }
 /* 长文段落保持 46rem 行宽；居中展示型段落除外 */
 main > p { max-width: 46rem; }
 main > p.invitation { max-width: none; }
+
+/* ========== 首页重排 v3（2026-10-05）：并列布局 + 折叠案例卡 + 自适应页脚 ========== */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; margin: 3rem auto; align-items: start; }
+.pair .eyebrow:first-child, .pair h2:first-child { margin-top: 0; }
+@media (max-width: 760px) { .pair { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* 折叠案例卡 */
+details.case-card { max-width: 46rem; margin: 3rem auto; border: 1px solid var(--border); border-radius: 10px; background: color-mix(in srgb, var(--note-bg) 45%, var(--bg)); }
+details.case-card summary { cursor: pointer; padding: 1.1rem 1.5rem; font-family: var(--serif); font-size: 1.25rem; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+details.case-card summary::-webkit-details-marker { display: none; }
+details.case-card summary::after { content: "＋"; color: var(--muted); font-size: 1.4rem; flex-shrink: 0; }
+details.case-card[open] summary::after { content: "－"; }
+details.case-card summary:hover { color: var(--accent); }
+.case-body { padding: .2rem 1.5rem 1.5rem; border-top: 1px solid var(--border); }
+.case-body h3 { font-size: .82rem; letter-spacing: .18em; color: var(--muted); font-family: var(--sans); margin: 1.6rem 0 .8rem; font-weight: 600; }
+.case-body .case-question p { font-size: 1.05rem; }
+.case-body .dimension { border-left: 3px solid var(--gold); padding-left: 1rem; margin-bottom: 1.2rem; }
+.case-body .dimension h4 { margin: 0 0 .3em; font-size: .95rem; }
+.case-body .case-integration { background: var(--note-bg); border-left: 3px solid var(--accent); padding: 1rem 1.2rem; border-radius: 0 6px 6px 0; margin-top: 1.4rem; }
+.case-body .case-integration p { margin: 0; }
+.case-body .en-sub { margin-top: 1.2rem; }
+
+/* 页脚：多栏自适应 —— 两栏页保持两栏，首页四栏 */
+.foot-cols { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }
+.pair .doors { grid-template-columns: 1fr; }
