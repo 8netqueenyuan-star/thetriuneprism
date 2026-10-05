@@ -1908,26 +1908,42 @@ TYPE: article (mechanical HTML-to-text; page title: 文章索引 · 三一棱镜
 首页 / 文章 
 # 文章索引 
 
-译文注释、翻译幕后手记与神学翻译问答。每篇文章均包含： 历史背景摘要 、 多版本对照表 、 翻译注释模块（三元组） 、 引用锚点 。 
-- 🪶 第 0 篇：起源故事——我如何重新理解"翻译" 
+译文注释、翻译幕后手记与神学翻译问答。每篇文章均包含： 历史背景摘要 、 多版本对照表 、 翻译注释模块（三元组） 、 引用锚点 。 🪶 第 0 篇：起源故事——我如何重新理解"翻译" 
+
 Substack 文章系列 总序 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ 六个开放问题系列预告；"统计收割"首发 
-- 🌾 第一篇：Statistical Harvest｜统计收割 
+
+阅读全文 → 🌾 第一篇：Statistical Harvest｜统计收割 
+
 Substack 文章系列第一篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"统计收割"作者定稿版一句话定义 
-- 🧭 第二篇：Internal Agency｜内在能动性 
+
+阅读全文 → 🧭 第二篇：Internal Agency｜内在能动性 
+
 Substack 文章系列第二篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"内在能动性"作者定稿版一句话定义 
-- 👤 第三篇：Endowed Personhood｜被赋予的人格 
+
+阅读全文 → 👤 第三篇：Endowed Personhood｜被赋予的人格 
+
 Substack 文章系列第三篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"被赋予的人格"作者定稿版一句话定义 
-- 🏛️ 第四篇：Architectural Stewardship｜架构管家职分 
+
+阅读全文 → 🏛️ 第四篇：Architectural Stewardship｜架构管家职分 
+
 Substack 文章系列第四篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"架构管家职分"作者定稿版一句话定义 
-- 🤝 第五篇：关系代偿假设｜Relational Compensation Hypothesis 
+
+阅读全文 → 🤝 第五篇：关系代偿假设｜Relational Compensation Hypothesis 
+
 Substack 文章系列第五篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"关系代偿假设"作者定稿版一句话定义；正文两处"替代"已按作者意见统一为"代偿" 
-- 🌌 第六篇：Emergent Personhood｜涌现的人格 
+
+阅读全文 → 🌌 第六篇：Emergent Personhood｜涌现的人格 
+
 Substack 文章系列第六篇 —— 全文逐字收录 + 导读卡 + 逻辑胶囊（观察→解释→应用）+ FAQPage；"涌现的人格"作者定稿版一句话定义（提问式） 
+
+阅读全文 → 
 ## Substack 定义问题卡 
 
-Substack「守望者笔记」原文的结构化问题定义卡（不转载全文，canonical 指回 Substack）。 
-- 🪞 AI时代，我们真正该恐惧的是什么？ 
+Substack「守望者笔记」原文的结构化问题定义卡（不转载全文，canonical 指回 Substack）。 🪞 AI时代，我们真正该恐惧的是什么？ 
+
 〈镜子、怪物，还是工具？〉问题定义卡 —— 问题定义 + FAQ + 逻辑胶囊（观察→解释→应用）；全文 canonical 见 Substack 
+
+阅读全文 → 
 ## 其他 
 - 📝 翻译幕后手记：诗篇第 1 篇的「有福了」 
 第一手翻译经验 —— 处理「有福了」时，为什么放弃「快乐」而选用「有福」？（推导过程占位，待作者填写）
