@@ -338,10 +338,7 @@ details.ai-reading summary:hover { color: var(--fg); }
 .door-open .door-type { color: var(--gold); border-color: var(--gold); }
 .doors-note { color: var(--muted); font-size: .92rem; margin: -1rem 0 2.5rem; }
 
-.method { list-style: none; padding: 0; margin: 1rem 0 2.5rem; }
-.method li { padding: .45rem 0; border-bottom: 1px dotted var(--border); font-size: .95rem; }
-.method li:last-child { border-bottom: none; }
-.method .step { color: var(--gold); font-weight: 600; letter-spacing: .04em; margin-right: .6em; font-size: .85rem; }
+/* （.method 文字版方法列表已移除，含义由生长循环图承担） */
 
 .entrances { display: grid; gap: .8rem; margin: 1rem 0 2rem; }
 @media (min-width: 44rem) { .entrances { grid-template-columns: 1fr 1fr; } }
