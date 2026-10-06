@@ -24,19 +24,12 @@
     placeholder: '把你的问题带进来…',
     send: '发送',
     notReady: '前导还在准备中，过几天再来看看吧。',
-    emailLabel: '留下邮箱，接收《入前之问》',
-    emailPlaceholder: '你的邮箱地址',
-    emailButton: '发送',
-    privacy: '邮箱仅用于发送《入前之问》及相关跟进，不会挪作他用。',
-    emailInvalid: '这个邮箱看起来不太对，再检查一下好吗？',
-    subscribed: '邮箱已收到。你也可以现在就填写《入前之问》：',
     sensitiveNote: '请勿输入姓名、电话等个人隐私信息。',
     intakeButton: '填写《入前之问》 →',
     networkError: '网络开小差了，稍后再试一次好吗？',
     thinking: '正在想…'
   };
 
-  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   /* ---------------- 工具 ---------------- */
   function esc(s) {
@@ -85,7 +78,7 @@
 
   /* ---------------- 挂件 ---------------- */
   var history = []; // [{role:'user'|'model', text}]
-  var emailAsked = false;
+  var formShown = false;
 
   function buildUI() {
     var root = document.createElement('div');
@@ -139,59 +132,18 @@
     return div;
   }
 
-  // 后端 reply 里带 [ASK_EMAIL] 时，渲染邮箱收集卡
-  function addEmailCard(root) {
-    if (emailAsked) return;
-    emailAsked = true;
+  // 后端 reply 里带 [SHOW_FORM] 时，直接渲染《入前之问》表单按钮
+  function showIntakeButton(root) {
+    if (formShown) return;
+    formShown = true;
     var msgs = root.querySelector('.prism-messages');
     var card = document.createElement('div');
     card.className = 'prism-msg prism-msg-model prism-email-card';
     card.innerHTML =
-      '<div class="prism-email-label">' + esc(TEXT.emailLabel) + '</div>' +
-      '<div class="prism-email-row">' +
-        '<input class="prism-email-input" type="email" placeholder="' + esc(TEXT.emailPlaceholder) + '" />' +
-        '<button class="prism-email-btn">' + esc(TEXT.emailButton) + '</button>' +
-      '</div>' +
-      '<div class="prism-email-err" hidden></div>' +
-      '<div class="prism-privacy">' + esc(TEXT.privacy) + '</div>';
+      '<a class="prism-intake-btn" href="' + esc(CONFIG.INTAKE_FORM_URL) + '" target="_blank" rel="noopener">' +
+        esc(TEXT.intakeButton) + '</a>';
     msgs.appendChild(card);
     scrollDown(msgs);
-
-    var input = card.querySelector('.prism-email-input');
-    var btn = card.querySelector('.prism-email-btn');
-    var err = card.querySelector('.prism-email-err');
-
-    function submitEmail() {
-      var email = input.value.trim().toLowerCase();
-      if (!EMAIL_RE.test(email)) {
-        err.textContent = TEXT.emailInvalid;
-        err.hidden = false;
-        return;
-      }
-      err.hidden = true;
-      btn.disabled = true;
-      btn.textContent = '…';
-      jsonp({ action: 'subscribe', email: email, source: location.href },
-        function (e, data) {
-          if (!e && data && data.ok) {
-            // [SUBSCRIBED]：前端专用的订阅成功文案，不经过模型
-            card.innerHTML =
-              '<div class="prism-subscribed">' + nl2br(TEXT.subscribed) + '</div>' +
-              '<a class="prism-intake-btn" href="' + esc(CONFIG.INTAKE_FORM_URL) + '" target="_blank" rel="noopener">' +
-                esc(TEXT.intakeButton) + '</a>';
-          } else {
-            btn.disabled = false;
-            btn.textContent = TEXT.emailButton;
-            err.textContent = (data && data.error) || TEXT.networkError;
-            err.hidden = false;
-          }
-          scrollDown(msgs);
-        });
-    }
-    btn.addEventListener('click', submitEmail);
-    input.addEventListener('keydown', function (ev) {
-      if (ev.key === 'Enter') submitEmail();
-    });
   }
 
   function sendMessage(root) {
@@ -228,13 +180,13 @@
         return;
       }
       var reply = String(data.reply || '');
-      var askEmail = reply.indexOf('[ASK_EMAIL]') >= 0;
-      reply = reply.replace('[ASK_EMAIL]', '').trim();
+      var showForm = reply.indexOf('[SHOW_FORM]') >= 0;
+      reply = reply.replace('[SHOW_FORM]', '').trim();
       if (reply) {
         addMessage(root, 'model', reply);
         history.push({ role: 'model', text: reply });
       }
-      if (askEmail) addEmailCard(root);
+      if (showForm) showIntakeButton(root);
     });
   }
 
