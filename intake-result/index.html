@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>已提交 · 三一棱镜</title>
+<meta name="description" content="你的《入前之问》已提交，AI 结构初判正在生成。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+.intake-card {
+  background: var(--note-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem 1.5rem;
+  margin: 1.5rem 0;
+  white-space: pre-wrap;
+  line-height: 1.9;
+}
+.intake-loading { color: var(--muted); margin: 2rem 0; }
+.intake-loading .dots::after {
+  content: ''; animation: dots 1.5s steps(4) infinite;
+}
+@keyframes dots { 0% { content: ''; } 25% { content: '.'; } 50% { content: '..'; } 75% { content: '...'; } }
+.intake-package {
+  border: 1px dashed var(--gold);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  margin: 2rem 0;
+}
+a.btn-big {
+  display: inline-block;
+  margin-top: .8rem;
+  padding: .7rem 1.6rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+}
+a.btn-big:hover { text-decoration: none; opacity: .92; }
+@media (prefers-color-scheme: dark) { a.btn-big { color: #10231a; } }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="主导航">
+  <a href="../">首页</a>
+  <a href="../articles/">文章</a>
+  <a href="../terms/">概念</a>
+  <a href="../questions/">问题</a>
+  <a href="../concept-map/">概念地图</a>
+  <a href="../about/">关于</a>
+  <a href="../consult/">多维会诊</a>
+</nav>
+
+<main>
+  <h1>你已提交。</h1>
+  <p>以下是 AI 为你生成的「结构初判」——</p>
+  <p class="meta">下面这一整块，是 AI 根据你的表单内容自动生成的：每次、每个人不同，但格式统一。它不是结论，最终判断属于你自己。</p>
+
+  <div id="intake-loading" class="intake-loading">
+    正在为你生成结构初判，请稍候<span class="dots"></span><br>
+    <span class="meta">通常需要 30~60 秒，请不要关闭此页。</span>
+  </div>
+
+  <div id="intake-result" class="intake-card" style="display:none"></div>
+
+  <div id="intake-fallback" class="intake-card" style="display:none">
+    生成超时了，别担心 —— 初判已经发到你的邮箱，请查收（含 72 小时内的一页纸结构图说明）。如果没看到，请检查垃圾邮件。
+  </div>
+
+  <div class="intake-package" id="intake-package" style="display:none">
+    <p><strong>接下来你还会收到：</strong><br>
+    你的完整《一页纸结构图》（含核心张力诊断＋72小时内可动的三步＋Open Questions）会在 <strong>72 小时内</strong>发到你的邮箱。</p>
+    <p>如果你觉得这个初判已经有用、想进一步把这个结构拆透——</p>
+    <p><a class="btn-big" id="intake-cal" href="#" target="_blank" rel="noopener">预约初诊 · 方向扫描 · $75／45分钟 →</a></p>
+    <p class="meta">真人出镜，一对一深谈。</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>三一棱镜 The Triune Prism · <a href="https://substack.com/@thetriuneprism">Substack「守望者笔记」</a></p>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var BACKEND_URL = 'https://script.google.com/macros/s/AKfycbw9QgKYT7ChGqU6C3bi9dsdjMcu1vaXd3Qip1UHeNc3nzDSmw1Bjn0IthBWEfOgbH0p/exec';
+
+  function qp(name) {
+    var m = new RegExp('[?&]' + name + '=([^&]*)').exec(location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+  }
+
+  var params = {
+    sit: qp('sit'), fac: qp('fac'), gue: qp('gue'),
+    tri: qp('tri'), len: qp('len'), wan: qp('wan')
+  };
+  var hasData = params.sit || params.fac || params.gue;
+
+  var loadingEl = document.getElementById('intake-loading');
+  var resultEl = document.getElementById('intake-result');
+  var fallbackEl = document.getElementById('intake-fallback');
+  var packageEl = document.getElementById('intake-package');
+  var calEl = document.getElementById('intake-cal');
+
+  function showPackage(calUrl) {
+    if (calUrl) { calEl.href = calUrl; }
+    else {
+      calEl.removeAttribute('href');
+      calEl.textContent = '预约初诊 · 方向扫描 · $75／45分钟（预约链接稍后公布）';
+    }
+    packageEl.style.display = '';
+  }
+
+  function showFallback() {
+    loadingEl.style.display = 'none';
+    fallbackEl.style.display = '';
+    showPackage('');
+  }
+
+  if (!hasData) { showFallback(); return; }
+
+  var cbName = 'intakeCb_' + Date.now();
+  var done = false;
+  var timer = setTimeout(function () {
+    if (!done) { done = true; showFallback(); }
+  }, 150000);
+
+  window[cbName] = function (res) {
+    if (done) return;
+    done = true;
+    clearTimeout(timer);
+    loadingEl.style.display = 'none';
+    if (res && res.ok && res.text) {
+      resultEl.textContent = res.text;
+      resultEl.style.display = '';
+      showPackage(res.calUrl || '');
+    } else {
+      showFallback();
+      if (res && res.calUrl) showPackage(res.calUrl);
+    }
+    try { delete window[cbName]; } catch (e) { window[cbName] = null; }
+  };
+
+  var q = Object.keys(params).map(function (k) {
+    return k + '=' + encodeURIComponent(params[k]);
+  }).join('&');
+  var s = document.createElement('script');
+  s.src = BACKEND_URL + '?action=intakeResult&callback=' + cbName + '&' + q;
+  s.onerror = function () { if (!done) { done = true; clearTimeout(timer); showFallback(); } };
+  document.head.appendChild(s);
+})();
+</script>
+
+</body>
+</html>
