@@ -26,6 +26,7 @@
     notReady: '前导还在准备中，过几天再来看看吧。',
     sensitiveNote: '请勿输入姓名、电话等个人隐私信息。',
     intakeButton: '填写《入前之问》 →',
+    teaser: '带一个问题进来 →',
     networkError: '网络开小差了，稍后再试一次好吗？',
     thinking: '正在想…'
   };
@@ -90,6 +91,7 @@
           '<path d="M12 2 L12 22 M2 12 L22 12" stroke="currentColor" stroke-width="0.9" opacity="0.55"/>' +
         '</svg>' +
       '</button>' +
+      '<button class="prism-teaser" hidden>' + esc(TEXT.teaser) + '</button>' +
       '<div class="prism-panel" hidden>' +
         '<div class="prism-header">' +
           '<div class="prism-header-text">' +
@@ -197,11 +199,29 @@
     var closeBtn = root.querySelector('.prism-close');
     var input = root.querySelector('.prism-input');
     var sendBtn = root.querySelector('.prism-send');
+    var teaser = root.querySelector('.prism-teaser');
     var welcomed = false;
+
+    /* 首次访问的气泡提示：让用户知道这里有个对话框 */
+    var TEASER_KEY = 'prism_teaser_seen';
+    function hideTeaser(seen) {
+      teaser.hidden = true;
+      if (seen) { try { localStorage.setItem(TEASER_KEY, '1'); } catch (e) {} }
+    }
+    var seenTeaser = false;
+    try { seenTeaser = !!localStorage.getItem(TEASER_KEY); } catch (e) {}
+    if (!seenTeaser) {
+      setTimeout(function () {
+        if (panel.hidden && teaser.hidden) { teaser.hidden = false; }
+      }, 1500);
+      setTimeout(function () { hideTeaser(true); }, 10500);
+    }
+    teaser.addEventListener('click', function () { hideTeaser(true); open(); });
 
     function open() {
       panel.hidden = false;
       bubble.classList.add('prism-open');
+      hideTeaser(true);
       if (!welcomed) {
         welcomed = true;
         addMessage(root, 'model', TEXT.welcome);
