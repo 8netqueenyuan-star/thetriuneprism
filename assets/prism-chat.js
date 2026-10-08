@@ -26,7 +26,7 @@
     notReady: '前导还在准备中，过几天再来看看吧。',
     sensitiveNote: '请勿输入姓名、电话等个人隐私信息。',
     intakeButton: '填写《入前之问》 →',
-    skipForm: '跳过对话，直接填表 →',
+    skipForm: '不想聊？直接填表 →',
     teaser: '带一个问题进来 →',
     networkError: '网络开小差了，稍后再试一次好吗？',
     thinking: '正在想…'
