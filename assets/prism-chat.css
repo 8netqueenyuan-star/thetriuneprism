@@ -268,6 +268,19 @@
   flex-shrink: 0;
 }
 
+/* 跳过对话的小字链接 */
+.prism-skip {
+  text-align: center;
+  padding: 2px 12px 0;
+  flex-shrink: 0;
+}
+.prism-skip a {
+  font-size: 11px;
+  color: var(--prism-muted);
+  text-decoration: none;
+}
+.prism-skip a:hover { color: var(--prism-accent); text-decoration: underline; }
+
 /* 移动端：底部通栏面板 */
 @media (max-width: 480px) {
   .prism-bubble { right: 16px; bottom: 16px; }
