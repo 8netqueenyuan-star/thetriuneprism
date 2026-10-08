@@ -141,6 +141,7 @@
   function showIntakeButton(root) {
     if (formShown) return;
     formShown = true;
+    logChat(); // 到达表单即对话结束，记一行
     var msgs = root.querySelector('.prism-messages');
     var card = document.createElement('div');
     card.className = 'prism-msg prism-msg-model prism-email-card';
@@ -195,6 +196,27 @@
     });
   }
 
+  /* 对话结束时记一行到后端表格（每轮页面会话只记一次） */
+  var chatLogged = false;
+  function logChat() {
+    if (chatLogged || history.length === 0) return;
+    chatLogged = true;
+    var transcript = history.map(function (h) {
+      return (h.role === 'user' ? '用户：' : 'AI：') + h.text;
+    }).join('\n');
+    if (transcript.length > 1500) transcript = transcript.slice(0, 1500) + '\n…（过长截断）';
+    var rounds = 0;
+    for (var i = 0; i < history.length; i++) {
+      if (history[i].role === 'user') rounds++;
+    }
+    jsonp({
+      action: 'logChat',
+      rounds: rounds,
+      reachedForm: formShown ? '是' : '否',
+      transcript: transcript
+    }, function () {});
+  }
+
   function init() {
     var root = buildUI();
     var bubble = root.querySelector('.prism-bubble');
@@ -234,6 +256,7 @@
     function close() {
       panel.hidden = true;
       bubble.classList.remove('prism-open');
+      logChat(); // 关闭时若聊过天，记一行（已记过则跳过）
     }
 
     bubble.addEventListener('click', function () {
