@@ -15,7 +15,7 @@
 - [Translations｜翻译](https://8netqueenyuan-star.github.io/thetriuneprism/translations/)：Theological Translation（天言翻译）的核心区域 —— 古老的神学语言、圣经概念、属灵逻辑，与 AI、技术、组织、关系、权力、社会现实的翻译现场（Question → Translation）
 - [Concepts｜概念](https://8netqueenyuan-star.github.io/thetriuneprism/terms/)：核心概念的结构化定义卡片：定义、回应的问题、来源与背景、不是什么、相关概念、相关文章、当前状态、开放问题（Translation → Concept；Schema.org ItemList + DefinedTerm）
 - [Essays｜长文](https://8netqueenyuan-star.github.io/thetriuneprism/articles/)：长篇观察、研究与论述 —— 经过沉淀的完整表达（Concept / Investigation → Expression；Schema.org ItemList）
-- [Bring a Question｜带一个问题进来](https://8netqueenyuan-star.github.io/thetriuneprism/consult/)：独立入口（不是第六个思想阶段）—— 把一个问题带进棱镜（Bring your question into the Prism），从多个维度重新观察它；不包装成咨询服务/专家问诊，Prism 不替用户下结论
+- [Bring a Question｜带一个问题进来](https://8netqueenyuan-star.github.io/thetriuneprism/consult/)：独立入口（不是第六个思想阶段）—— 把一个问题带进棱镜（Bring your question into the Prism），从多个维度重新观察它；不包装成咨询服务/专家问诊，Prism 不替用户下结论；页底附一份公开的思想生长档案（Thought in Motion 01：与长夜岚的真实 Substack 对话，含 5 份田野实物），展示一个真实问题被带入棱镜、多维度重新观看的全过程
 - [关于](https://8netqueenyuan-star.github.io/thetriuneprism/about/)：三一棱镜作者档案（Schema.org Person 标记）
 - [概念地图](https://8netqueenyuan-star.github.io/thetriuneprism/concept-map/)：方法 → 概念 → 问题 → 文章的思想网络图，数据与 knowledge-graph.json 保持一致
 - [单篇文章模板](https://8netqueenyuan-star.github.io/thetriuneprism/articles/_template.html)：Article + FAQPage 双 JSON-LD 的文章结构模板（含 AI Reading Layer 模板）
