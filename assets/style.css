@@ -315,6 +315,7 @@ details.ai-reading summary:hover { color: var(--fg); }
 /* 会诊入口引导 */
 .consult-intro { margin: 2rem 0; }
 .consult-intro .note { color: var(--muted); font-size: .9rem; }
+.privacy-note { color: var(--muted); font-size: .85rem; }
 /* 一句邀请：独立成段，留白 */
 .invitation {
   text-align: center;
