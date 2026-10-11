@@ -7,7 +7,7 @@
 <meta name="description" content="你的《入前之问》已提交，AI 结构初判正在生成。">
 <meta name="robots" content="noindex, nofollow">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=3">
+<link rel="stylesheet" href="../assets/style.css?v=4">
 <style>
 .intake-card {
   background: var(--note-bg);
@@ -154,5 +154,19 @@ a.btn-big:hover { text-decoration: none; opacity: .92; }
 })();
 </script>
 
+<script>
+/* section 滚动显现（极慢、极少） */
+(function () {
+  var sections = document.querySelectorAll('section');
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(function (s) { s.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  sections.forEach(function (s) { obs.observe(s); });
+})();
+</script>
 </body>
 </html>

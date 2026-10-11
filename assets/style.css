@@ -65,10 +65,10 @@ nav.site-nav a { white-space: nowrap; }
 /* 锁定导航：Bring a Question 是独立入口，不是第六个阶段 */
 .site-nav .nav-cta {
   border: 1px solid var(--accent);
-  border-radius: 999px;
+  border-radius: 0;
   padding: .1em .75em;
 }
-.site-nav .nav-cta:hover { background: var(--accent); color: #fff; text-decoration: none; }
+.site-nav .nav-cta:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
 /* 分区眉题：EXPLORE THE FIELD / BRING YOUR QUESTION */
 .eyebrow {
   margin: 0 0 .4rem;
@@ -96,7 +96,7 @@ footer.site-footer {
 .fact-sheet { margin: 1.2rem 0 0; }
 .fact-sheet > div { display: grid; grid-template-columns: 7.5em 1fr; gap: .6em; padding: .3em 0; border-top: 1px solid var(--note-border); }
 .fact-sheet > div:first-child { border-top: none; }
-.fact-sheet dt { font-weight: 700; font-size: .85rem; color: var(--muted, #6b6259); }
+.fact-sheet dt { font-weight: 400; font-size: .85rem; color: var(--muted, #6b6259); }
 .fact-sheet dd { margin: 0; }
 /* TODO 占位高亮 */
 .todo {
@@ -132,7 +132,7 @@ ul.clean li { margin: .6rem 0; }
 /* ---------- Concept Cards ---------- */
 .concept-fields { margin: 1.5rem 0; }
 .concept-fields dt {
-  font-weight: 700; margin-top: 1.4rem; font-size: 1.02rem;
+  font-weight: 400; margin-top: 1.4rem; font-size: 1.02rem;
   border-bottom: 1px solid var(--border); padding-bottom: .25em;
 }
 .concept-fields dt .en { color: var(--muted); font-weight: 400; font-size: .88rem; }
@@ -186,9 +186,9 @@ details.ai-reading summary:hover { color: var(--fg); }
   display: inline-block;
   padding: 0.65rem 1.4rem;
   border: 1px solid currentColor;
-  border-radius: 6px;
+  border-radius: 0;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
 }
 .btn:hover { text-decoration: none; opacity: 0.85; }
 
@@ -205,13 +205,13 @@ details.ai-reading summary:hover { color: var(--fg); }
 .email-subscribe .es-row { display: flex; gap: .6rem; margin-top: .9rem; flex-wrap: wrap; }
 .email-subscribe input[type="email"] {
   flex: 1 1 14rem; padding: .6rem .8rem; font-size: 1rem;
-  border: 1px solid var(--border); border-radius: 6px;
+  border: 1px solid var(--border); border-radius: 0;
   background: var(--bg); color: var(--fg);
 }
 .email-subscribe button {
   padding: .6rem 1.4rem; font-size: 1rem; cursor: pointer;
-  border: 1px solid var(--note-border); border-radius: 6px;
-  background: var(--note-border); color: #fff;
+  border: 1px solid var(--note-border); border-radius: 0;
+  background: var(--note-border); color: var(--bg);
 }
 .email-subscribe button:disabled { opacity: .55; cursor: default; }
 .email-subscribe .es-msg { font-size: .9rem; margin-top: .7rem; }
@@ -274,12 +274,12 @@ details.ai-reading summary:hover { color: var(--fg); }
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: #222;
-  color: #fff;
+  background: var(--fg);
+  color: var(--bg);
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 0;
 }
-.cta-button:hover { background: #000; }
+.cta-button:hover { background: var(--accent); }
 /* 一次完整的折射 */
 .case-study {
   max-width: 720px;
@@ -405,7 +405,7 @@ details.ai-reading summary:hover { color: var(--fg); }
   margin-top: 1rem;
   padding: .65rem 1.4rem;
   border: 1px solid #c49a3f;
-  border-radius: 6px;
+  border-radius: 0;
   color: #faf6ee;
   text-decoration: none;
 }
@@ -620,6 +620,20 @@ details.case-card summary:hover { color: var(--accent); }
 .case-body .case-integration { background: var(--note-bg); border-left: 3px solid var(--accent); padding: 1rem 1.2rem; border-radius: 0 6px 6px 0; margin-top: 1.4rem; }
 .case-body .case-integration p { margin: 0; }
 .case-body .en-sub { margin-top: 1.2rem; }
+
+/* ========== 滚动显现（极慢、极少，2026-10-11） ========== */
+section {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  section { opacity: 1; transform: none; transition: none; }
+}
 
 /* 页脚：多栏自适应 —— 两栏页保持两栏，首页四栏 */
 .foot-cols { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); }

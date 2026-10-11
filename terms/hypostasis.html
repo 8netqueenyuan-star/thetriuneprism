@@ -14,7 +14,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=3">
+<link rel="stylesheet" href="../assets/style.css?v=4">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -209,5 +209,19 @@
 <link rel="stylesheet" href="../assets/prism-chat.css">
 <script src="../assets/prism-chat.js"></script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a206264007dd4d1a912330f0da559826"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+/* section 滚动显现（极慢、极少） */
+(function () {
+  var sections = document.querySelectorAll('section');
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(function (s) { s.classList.add('visible'); });
+    return;
+  }
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  sections.forEach(function (s) { obs.observe(s); });
+})();
+</script>
 </body>
 </html>
