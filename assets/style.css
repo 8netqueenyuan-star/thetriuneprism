@@ -39,15 +39,22 @@ body {
   padding: 1rem 1.25rem 4rem;
   background: var(--bg);
   color: var(--fg);
-  font-family: system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
-  line-height: 1.8;
+  font-family: "Cormorant Garamond", "Noto Serif SC", "Georgia", serif;
+  line-height: 1.85;    /* 行距拉大，呼吸感 */
   font-size: 1rem;
 }
 h1, h2, h3 { line-height: 1.4; margin-top: 2em; }
 h1 { font-size: 1.6rem; }
 h2 { font-size: 1.3rem; border-bottom: 1px solid var(--border); padding-bottom: .3em; }
-a { color: var(--olive); text-decoration: none; }
-a:hover { color: var(--accent-soft); text-decoration: underline; }
+a {
+  color: var(--olive);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s ease;
+}
+a:hover {
+  border-bottom-color: var(--olive);
+}
 nav.site-nav {
   display: flex; flex-wrap: wrap; gap: .25rem 1rem;
   padding: .75rem 0; margin-bottom: 1rem;
@@ -544,17 +551,21 @@ details.ai-reading summary:hover { color: var(--fg); }
   .gm-motion { display: none; }
 }
 
-/* ========== 字体系统 v1（2026-10-05）：衬线标题 × 无衬线正文 ========== */
+/* ========== 字体系统 v2（2026-10-11）：Cormorant Garamond 标题 × 衬线正文 ========== */
 :root {
-  --serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", serif;
+  --serif: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
 }
-/* 全站标题改用衬线：Display / H2 两级 */
-h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: .02em; }
+/* 全站标题：不加粗，靠字号撑 */
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
 h1 { font-size: 2rem; line-height: 1.55; }
 h2 { font-size: 1.45rem; line-height: 1.6; }
 /* 首页 hero 大标题 */
 .hero h1 {
-  font-family: var(--serif); font-weight: 600;
+  font-family: var(--serif); font-weight: 400;
   font-size: clamp(2rem, 5.2vw, 2.9rem);
   line-height: 1.55; letter-spacing: .03em;
 }
@@ -566,14 +577,14 @@ details.fold summary {
 }
 details.fold summary::-webkit-details-marker { display: none; }
 details.fold summary::marker { content: ""; }
-details.fold summary .fold-name { font-family: var(--serif); font-weight: 600; font-size: 1.08rem; letter-spacing: .02em; }
+details.fold summary .fold-name { font-family: var(--serif); font-weight: 400; font-size: 1.08rem; letter-spacing: .02em; }
 details.fold summary .fold-en { font-size: .82rem; color: var(--muted); }
 details.fold summary::after { content: "＋"; margin-left: auto; color: var(--muted); font-size: 1.05rem; line-height: 1; }
 details.fold[open] summary::after { content: "－"; }
 details.fold .fold-body { padding: .2rem 1rem .95rem; }
 details.fold .fold-body p { margin: .55em 0; }
 /* ---------- Maggie 式两栏页脚 ---------- */
-.foot-cta { font-family: var(--serif); font-weight: 600; font-size: 1.35rem; letter-spacing: .03em; margin: 0 0 .15rem; color: var(--fg); }
+.foot-cta { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; letter-spacing: .03em; margin: 0 0 .15rem; color: var(--fg); }
 .foot-cta a { color: var(--fg); }
 .foot-tagline { margin: 0 0 1.4rem; font-size: .9rem; }
 .foot-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.4rem; }
