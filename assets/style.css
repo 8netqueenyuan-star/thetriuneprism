@@ -1,16 +1,19 @@
-/* 极简样式：浅色/深色自适应，移动端友好，无框架 */
+/* 旧羊皮纸 + 黄昏石墙 + 橄榄树荫（2026-10-11）：浅色/深色自适应，移动端友好，无框架 */
 :root {
   color-scheme: light dark;
-  --bg: #faf6ee;
-  --fg: #2b2620;
-  --muted: #7d7261;
-  --accent: #3d6b4f;
-  --border: #e3d9c4;
-  --note-bg: #f3ecdc;
-  --note-border: #3d6b4f;
+  --bg: #F5F0E6;          /* 暖米白，不是纯白 */
+  --bg-deep: #EAE3D3;     /* 深色区块背景 */
+  --fg: #2C2A24;          /* 暖黑，不是纯黑 */
+  --muted: #6B6558;       /* 次级文字 */
+  --accent: #8B7355;      /* 石墙棕，主强调色 */
+  --accent-soft: #C4A97D; /* 浅金，hover 用 */
+  --olive: #5F6F52;       /* 橄榄绿，链接/高亮 */
+  --border: #D6CFC0;      /* 分隔线 */
+  --note-bg: #EAE3D3;     /* 信息区块背景，走 bg-deep */
+  --note-border: #5F6F52; /* 信息区块边线，走 olive */
   --todo-bg: #fbf3df;
   --todo-border: #c49a3f;
-  --code-bg: #f1eadd;
+  --code-bg: #EDE7D6;
   --gold: #a8842c;
 }
 @media (prefers-color-scheme: dark) {
@@ -43,8 +46,8 @@ body {
 h1, h2, h3 { line-height: 1.4; margin-top: 2em; }
 h1 { font-size: 1.6rem; }
 h2 { font-size: 1.3rem; border-bottom: 1px solid var(--border); padding-bottom: .3em; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: var(--olive); text-decoration: none; }
+a:hover { color: var(--accent-soft); text-decoration: underline; }
 nav.site-nav {
   display: flex; flex-wrap: wrap; gap: .25rem 1rem;
   padding: .75rem 0; margin-bottom: 1rem;
