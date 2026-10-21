@@ -318,6 +318,11 @@ details.ai-reading summary:hover { color: var(--fg); }
 .consult-intro { margin: 2rem 0; }
 .consult-intro .note { color: var(--muted); font-size: .9rem; }
 .privacy-note { color: var(--muted); font-size: .85rem; }
+/* 概念卡片：速览表 / 草稿标记 / 提示块（redemptive-counterfeit 卡用） */
+.glance dt { font-weight: 600; margin-top: .8em; }
+.glance dd { margin: 0; }
+.draft { color: var(--accent); font-size: .95em; }
+.note { background: var(--bg-deep); padding: .7rem 1rem; border-left: 3px solid var(--olive); margin: 1em 0; }
 /* 一句邀请：独立成段，留白 */
 .invitation {
   text-align: center;
