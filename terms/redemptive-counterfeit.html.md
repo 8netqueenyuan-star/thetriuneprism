@@ -90,7 +90,7 @@ Faith-Reality Gap Audit 系列第八篇《新天新地还是技术乌托邦？�
 
 ## Related Articles / 相关文章
 
-- Faith-Reality Gap Audit 第八篇《新天新地还是技术乌托邦？人类故事真正的结局》（URL 待补）
+- Faith-Reality Gap Audit 第八篇《新天新地还是技术乌托邦？人类故事真正的结局》[（Substack 原文）](https://theologyreflections.substack.com/p/34c)
 
 ## Current Status / 当前状态
 
