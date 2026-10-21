@@ -260,6 +260,8 @@ details.ai-reading summary:hover { color: var(--fg); }
 .hero .lede { font-size: 1.02rem; color: var(--muted); margin: 0; }
 /* 首屏新文案：中文长标题收紧字距 */
 .hero h1 { font-size: 1.6rem; letter-spacing: .02em; }
+/* 首页 hero 定位句：主标题下的落地解释 */
+.hero-positioning { margin: 0 0 1.2em; line-height: 1.85; }
 .hero-caption p { max-width: 44rem; }
 /* 英文副文：折叠感 / 次要信息 */
 .en-sub {
