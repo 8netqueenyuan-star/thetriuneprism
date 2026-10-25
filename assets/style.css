@@ -41,7 +41,7 @@ body {
   color: var(--fg);
   font-family: "Cormorant Garamond", "Noto Serif SC", "Georgia", serif;
   line-height: 1.85;    /* 行距拉大，呼吸感 */
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 h1, h2, h3 { line-height: 1.4; margin-top: 2em; }
 h1 { font-size: 1.6rem; }
