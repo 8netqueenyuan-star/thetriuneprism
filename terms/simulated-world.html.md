@@ -62,7 +62,7 @@ Simulated World
 
 ## Related Concepts / 相关概念（Draft · 待确认）
 
-上传意识 / Mind Upload（前接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/mind-upload.html） · 被造之神 / Created God（后接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/created-god.html） · 救赎仿制品 / Redemptive Counterfeit（总括概念；https://8netqueenyuan-star.github.io/thetriuneprism/terms/redemptive-counterfeit.html）
+上传意识 / Mind Upload（前接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/mind-upload.html） · 被造之神 / Created God（后接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/created-god.html） · 救赎仿制品 / Redemptive Counterfeit（总括概念；https://8netqueenyuan-star.github.io/thetriuneprism/terms/redemptive-counterfeit.html）。本卡讲“世界”这一层（人住在哪里）；上传意识讲“人”这一层（人是什么）。
 
 ## 神学锚点（Draft · 待确认）
 
@@ -89,7 +89,7 @@ Bostrom 2003 模拟论证（待核对）。
 
 启 21:1“先前的天地过去了”有“更新”与“断裂”两种读法；本站采取哪一种，待作者确认。连续性论证不依赖 kainos/neos 的词义区分。
 
-**待作者确认：**模拟归入“数字永生”主张，还是新增为超级智能叙事的第四个主张；确认前不得改动“救赎仿制品”卡的术语锁定。
+**归属（2026-10-27 作者裁定）：**模拟世界是超级智能叙事的第四个主张，与上传意识并列，不并入“数字永生”。
 
 ## 定义权声明
 

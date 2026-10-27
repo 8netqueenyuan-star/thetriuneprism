@@ -54,7 +54,7 @@ Mind Upload
 
 ## Related Concepts / 相关概念（Draft · 待确认）
 
-统计收割 / Statistical Harvest（相关，不等同：统计收割指 AI 提取人类经验的模式；本卡指对一个人的整体保存；https://8netqueenyuan-star.github.io/thetriuneprism/terms/statistical-harvest.html）
+统计收割 / Statistical Harvest（相关，不等同：统计收割指 AI 提取人类经验的模式；本卡指对一个人的整体保存；https://8netqueenyuan-star.github.io/thetriuneprism/terms/statistical-harvest.html）。数字永生：与本卡大面积重叠，二者关系（并列/别称）待作者确认。
 
 ## 神学锚点（Draft · 待确认）
 
