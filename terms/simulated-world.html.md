@@ -8,8 +8,19 @@ status: "Hypothesis"
 #   exercised_in / exercises —— A exercised_in B：A 在 B 中被操练
 #   hinders / hindered_by —— A hinders B：A 妨碍 B
 #   related —— 默认：相关，类型待作者指定（不虚构关系类型）
-related_concepts: []
-# 相关概念待作者确认
+related_concepts:
+  - name: "Mind Upload"
+    chinese_name: "上传意识"
+    url: "https://8netqueenyuan-star.github.io/thetriuneprism/terms/mind-upload.html"
+    relation: "related"
+  - name: "Created God"
+    chinese_name: "被造之神"
+    url: "https://8netqueenyuan-star.github.io/thetriuneprism/terms/created-god.html"
+    relation: "related"
+  - name: "Redemptive Counterfeit"
+    chinese_name: "救赎仿制品"
+    url: "https://8netqueenyuan-star.github.io/thetriuneprism/terms/redemptive-counterfeit.html"
+    relation: "related"
 ---
 
 # 模拟世界 / Simulated World
@@ -31,11 +42,13 @@ Simulated World
 
 ## 旧词为什么不够用（Draft · 待确认）
 
-> 待作者确认。
+“虚拟现实”指工具，“元宇宙”指社交空间，“模拟假说”指本体论假设。没有一个词指：被设计者渲染的世界，被许诺为终局的“新”。
 
 ## 判定标准（Draft · 待确认）
 
-> 待作者确认。
+1. 许诺一个没有痛苦的完整世界；
+2. 该世界由受造者设计并运行；
+3. 被呈现为终局性的新，不是工具或娱乐。
 
 ## 对位（Draft · 待确认）
 
@@ -49,7 +62,7 @@ Simulated World
 
 ## Related Concepts / 相关概念（Draft · 待确认）
 
-> 待作者确认。
+上传意识 / Mind Upload（前接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/mind-upload.html） · 被造之神 / Created God（后接；https://8netqueenyuan-star.github.io/thetriuneprism/terms/created-god.html） · 救赎仿制品 / Redemptive Counterfeit（总括概念；https://8netqueenyuan-star.github.io/thetriuneprism/terms/redemptive-counterfeit.html）
 
 ## 神学锚点（Draft · 待确认）
 
@@ -86,4 +99,4 @@ Bostrom 2003 模拟论证（待核对）。
 
 This status describes the author's current relationship to the concept. It does not imply academic consensus.（此状态描述作者当前与该概念的关系，不代表学界共识。）
 
-修订记录：本卡建于 2026-10-27；状态变更时此处留痕。
+修订记录：本卡建于 2026-10-27；2026-10-27 第二批修订；状态变更时此处留痕。
