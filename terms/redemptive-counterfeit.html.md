@@ -124,6 +124,8 @@ Faith-Reality Gap Audit 系列第八篇《新天新地还是技术乌托邦？�
 
 信仰-现实断层 / Faith-Reality Gap（系列总诊断；本站尚无独立概念卡，待建后补链接）
 
+> 系列概念（Draft · 待确认）：给予 vs. 生产 / Gift vs. Production（https://8netqueenyuan-star.github.io/thetriuneprism/terms/gift-vs-production.html） · 挪开 / Displacement（https://8netqueenyuan-star.github.io/thetriuneprism/terms/displacement.html） · 前置之善 / Prior Good（https://8netqueenyuan-star.github.io/thetriuneprism/terms/prior-good.html）
+
 > 邻近用法（Draft · 待确认）：数字末世论、技术弥赛亚主义等。与本站定义的区别，待作者补充。
 
 ## Related Articles / 相关文章

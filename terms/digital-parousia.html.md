@@ -63,6 +63,10 @@ Digital Parousia
 
 三者都是救赎仿制品的具体形态。
 
+挪开 / Displacement（https://8netqueenyuan-star.github.io/thetriuneprism/terms/displacement.html）
+
+给予 vs. 生产 / Gift vs. Production（https://8netqueenyuan-star.github.io/thetriuneprism/terms/gift-vs-production.html）
+
 > 邻近用法（Draft · 待确认）：数字末世论、技术弥赛亚主义等。与本站定义的区别，待作者补充。
 
 ## 神学锚点（Draft · 待确认）
